@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to Contact List</title>
+        <link rel="stylesheet" href="assets/css/user-profiles-lists/user-profiles-list-small.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+       
+        <script src="ContactList.js"></script>
+        <script src="jquery.js"></script>
+        <link href="assets/ContactList.css" rel="stylesheet" id="bootstrap-css">
+        
+
+    </head>
+    <body>
+
+        <section id="add" data-role="page" style="display: none;" >
+            <div class="container">
+                <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>New Contact </legend>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Name</label>  
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name ="key" type="hidden"> 
+                                    <input id="fname" name ="first" type="text" placeholder="First Name" required> 
+                                    <input  id="mname"  name ="middle" type="text" placeholder="Middle Name" required> 
+                                    <input id="lname" name ="last" type="text" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Age</label>  
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
+                                    <input id="age" name="age" type="number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group"> 
+                            <label class="col-md-4 control-label">Gender</label>
+                            <div class="col-md-4 selectContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
+                                    <select  id="gender" name="gender" class="form-control selectpicker" >
+                                        <option value="male">male</option>
+                                        <option value="female">female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Phone</label>  
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input id="phone" name="phone" type="tel" placeholder="(202) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">email</label>  
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input id="email" name="email" type="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Fax</label>  
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input id="fax" name="fax" type="tel" placeholder="(202) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Address</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                    <textarea id="address" class="form-control" name="address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-4">
+                                <button  id="add_contact_button" type="button" class="btn btn-warning" onclick="add()">Save <span class="glyphicon glyphicon-floppy-saved"></span></button>
+                                <button  id="cancel_contact_button" type="button" class="btn btn-primary" onclick="rese()">Cancel <span class="glyphicon glyphicon-floppy-remove"></span></button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </section><!-- / add page -->
+
+        <section id="viewList" data-role="page" >
+            <header data-role="header" data-add-back-btn="true">
+                <h1>Contact List</h1>
+                <a id="add_button" href="#"><img src="assets/add-user.png" alt="" style="width:50px;" onclick="activeAdd()"/></a>
+                <a id="clear_button" href="#"><img src="assets/trash.ico" alt="" style="width:50px;" onclick="del()"/></a>
+            </header>
+            <ul id="contactList" class="user-profiles-list-small">
+            </ul>
+        </section>
+
+        <section id="viewContact" data-role="page"  style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id="title">Ahmed Medhat</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3 col-lg-3 " align="center"> 
+                                        <img alt="User Pic" src="assets/user.png" class="img-circle img-responsive"> 
+                                    </div>
+                                    <div class=" col-md-9 col-lg-9 "> 
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Name:</td>
+                                                    <td><p id="name">ahmed medhat</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Age:</td>
+                                                    <td><p id="age2">22</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gender</td>
+                                                    <td><p id="gender2">male</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Phone:</td>
+                                                    <td><p id="phone2">01142803256</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email:</td>
+                                                    <td><a id="email2" href="mailto:info@support.com">ksksksk</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fax:</td>
+                                                    <td><p id="fax2">1111</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Address:</td>
+                                                    <td><p id="address2">sjsjsjssjsj</p></td>
+                                                    <td><input type="hidden" id="key"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <a id="back_button" href="javascript:ret()" class="btn btn-sm " ><img src="assets/back.icon.jpg" alt="" style="width:40px;"/></a>
+                                <span class="pull-right">
+                                    <a id="edit_button" onclick="javascript:upd()"class="btn btn-sm " ><img src="assets/edit-contact.png" alt="" style="width:40px;"/></a>
+                                    <a id="delete_button" onclick="javascript:de()" class="btn btn-sm " ><img src="assets/delete-contact.png" onclick="" alt="" style="width:40px;"/></a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>

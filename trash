@@ -1,0 +1,144 @@
+
+        
+       /* var fname=document.getElementById("fname").value;
+        var mname=document.getElementById("mname").value;
+        var lname=document.getElementById("lname").value;
+        var age=document.getElementById("age").value;
+        var gender=document.getElementById("gender").value;
+        var phone= document.getElementById("phone").value;
+        var email= document.getElementById("email").value;
+        var fax= document.getElementById("fax").value;
+        var address=document.getElementById("address").value;
+     x= new  ContactDetails(fname, mname, lname, age, gender, phone, email, fax, address);
+        localStorage.setItem(sh, x);*/
+      }
+       //contactService.addContactView();
+       // document.getElementById("viewContact").style.display="block";
+      
+        
+        
+        // 2- get the data from form and construct object from ContactDetails
+       /* */
+        // 3- check if the you came from update existing contact or add new contact 
+        // 4- if you add new one add generate key for this new one and save it into localstorage
+        // 5- if you update existing one, you should update this contact in the list view and also in the local storage
+        // 6- then change the view to the list view
+         this.addContactToDOM = function (key, contactDetails) {
+        // add new contact with this html structure  into element "contactList" with contact details 
+        /*
+         * <li> 
+         *      <div class="user-avatar">
+         *          <a href="#">
+         *          <img src="assets/images/avatars/4.jpg" width="48" alt="Profile of Owen Christians" />
+         *          </a>
+         *      </div>
+         *      <p class="user-name">
+         *          <a href="">Name</a>
+         *          <span>Phone</span>
+         *      </p>
+         *      <a class="delete" href="#"><i class="fa fa-close"></i></a>
+         </li>
+         */
+    };
+     this.deleteContact = function (key) {
+        // delete contact from the localstorage based on this key 
+        // and then call contactService.removeContactFromDOM(key);
+        // then change the view to the list view.
+    };
+     this.getContactList = function () {
+        
+        // access the local storage and get the list of contacts saved there 
+        //return array of contactdetails 
+    };
+    
+    this.init = function () {
+        //initialize the form and link the buttons with the actions for 
+        //add_button,add_contact_button,cancel_contact_button,back_button,clear_button
+        // then get the list of contacts from localstorage and add it to the list view 
+    };
+      /*
+          *
+         * <li> 
+         *      <div class="user-avatar">
+         *          <a href="#">
+         *          <img src="assets/images/avatars/4.jpg" width="48" alt="Profile of Owen Christians" />
+         *          </a>
+         *      </div>
+         *      <p class="user-name">
+         *          <a href="">Name</a>
+         *          <span>Phone</span>
+         *      </p>
+         *      <a class="delete" href="#"><i class="fa fa-close"></i></a>
+         </li>
+         */
+          /*  var div = document.createElement('div');
+            div.class ="user-avatar";
+            var a=document.createElement('a');
+            a.href="#";
+            var img = document.createElement('img');
+           // var img = document.createElement("img");
+            img.src = "assets/images/avatars/4.jpg";
+            img.width=48;
+            img.alt="Profile of Owen Christians";
+           
+            div.appendChild(a);
+            div.appendChild(img);
+            
+            var p=document.createElement('p');
+             var a2=document.createElement('a');
+             var linkText = document.createTextNode("Name");
+             a2.href="#";
+             a2.appendChild(linkText);
+             var span=document.createElement('span');
+             var linkSpan = document.createTextNode(arr[5].split(":")[1]);
+             span.appendChild(linkSpan);
+             p.class="user-name";
+             p.appendChild(a2);
+             p.appendChild(span);
+            var a3=document.createElement('a');
+             a3.href="#";
+             a3.class="delete";
+             var it=document.createElement('i');
+             it.class="a fa-close";
+             a3.appendChild(it);
+            
+list.appendChild(a3);
+            list.appendChild(div);
+            list.appendChild(p);*/
+            
+           
+            
+              
+            //entry.appendChild(document.createTextNode(obj.name);
+         //   list.appendChild(entry);
+           // alert()
+            
+         
+         
+        //get object by this key 
+        //then render this object to the contact view 
+        //switch to the contact view 
+   
+
+    this.updateContactItem = function (key) {
+        // 1- validating update contact from 
+        // 2- get the data from form and construct object from ContactDetails
+        // 3- fill the form with this data 
+        // 4- then change the view to the add view 
+    };
+     //console.log(o);
+   //$("#name").innerHTML=arr[1].split(",")[0]+'';
+   // document.getElementById("age").innerHTML="25";//arr[1].split(",")[0]+'';
+   // document.getElementById("age").value=ob[1].split(",")[1];
+    //arr[3].split(",")[0];
+    //document.getElementById("gender").innerHTML=arr[1].split(",")[1];
+   // alert("fdfd");
+    
+   // alert( document.getElementById("address").value());
+   /*  alert( document.getElementById("fax").value());
+      alert( document.getElementById("email").value());
+       alert( document.getElementById("age").value());*/
+        //alert( document.getElementById("address").value());
+   // var ob= new ContactService();
+                  
+    
